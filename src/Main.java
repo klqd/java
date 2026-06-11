@@ -240,15 +240,55 @@ public class Main {
         System.out.println("数组最大值是： " + max);
 
 
+        //对象的使用格式举例:
+
+        //对象的使用格式
+        //通常情况下，一个类不能直接使用，需要根据类创建一个对象，才能使用。
+        //  ①导包：也就是指出需要使用的类在什么位置
+        //        格式：import 包名称.类名称；
+        //        举例：import cn.itcast.day03.demo01.Student;
+        //        注：对于和当前属于同一个包的情况，可以省略导包语句
+        //  ②创建：
+        //        格式：类名称 对象名 = new 类名称();
+        //        举例：Student stu = new Student();
+        //  ③使用：
+        //        使用成员变量：对象名.成员变量名;
+        //        使用成员方法：对象名.成员方法名(参数);
+
+        //创建对象格式：类名 对象名 = new 类名();
+        Student objStudent = new Student();
+        //直接输出成员变量值
+        System.out.println("姓名："+objStudent.name); //null
+        System.out.println("年龄："+objStudent.age);
+
+        //给成员变量赋值
+        objStudent.name = "张学霸";
+        objStudent.age = 18;
+        //再次输出成员变量的值
+        System.out.println("姓名："+objStudent.name); //张学霸
+        System.out.println("年龄："+objStudent.age); //18
+        //调用成员方法
+        objStudent.study();
+        objStudent.eat();
 
 
+        // 给继承数据赋值
+        ClassName obj = new ClassName();
+        obj.setName("林凡");
+        obj.setAge(18);
+        obj.setMale(true);
 
+        System.out.println(obj.getName());
+        System.out.println(obj.getAge());
+        System.out.println(obj.isMale());
 
-
-
-
-
-
-
+        // 无构造参数
+        ClassName obj2 = new ClassName();
+        // 全参构造，无需使用setXxx方法
+        ClassName obj3 = new ClassName("消炎", 20);
+        System.out.println("姓名：" + obj3.getName() + "，年龄：" + obj3.getAge());
+        // 如果需要改变对象当中的成员变量数据内容，仍然还需要使用setXxx方法
+        obj3.setAge(21); // 改变年龄
+        System.out.println("姓名：" + obj3.getName() + "，年龄：" + obj3.getAge());
     }
 }
