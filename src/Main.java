@@ -1,3 +1,4 @@
+import utils.Demo01_Scanner;
 import java.util.Arrays;
 
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
@@ -290,5 +291,18 @@ public class Main {
         // 如果需要改变对象当中的成员变量数据内容，仍然还需要使用setXxx方法
         obj3.setAge(21); // 改变年龄
         System.out.println("姓名：" + obj3.getName() + "，年龄：" + obj3.getAge());
+
+
+        // 标准代码——JavaBean
+        // 无参构造方法使用: 需要先添加后获取
+        Demo01_Scanner scannerNull = new Demo01_Scanner();
+        scannerNull.setName("陈凡");
+        scannerNull.setAge(21);
+        System.out.println("姓名：" + scannerNull.getName() + "年龄：" + scannerNull.getAge());
+
+        // 有参构造方法使用：可以直接传参新增数据内容
+        Demo01_Scanner scanner = new Demo01_Scanner("陈凡", 19);
+        System.out.println("姓名：" + scanner.getName() + "年龄：" + scanner.getAge());
+
     }
 }
