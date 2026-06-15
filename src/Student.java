@@ -1,16 +1,22 @@
 public class Student {
-    // 1、 类和对象
-    // 成员变量
-    String name;
-    int age;
-
-    // 成员方法
-    public void study() {
-        System.out.println("好好学习，天天向上！");
+    private String name;
+    private int age;
+    public Student() {
     }
-
-    // 学习方法
-    public void eat() {
-        System.out.println("学习饿了，要吃饭");
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
     }
 }

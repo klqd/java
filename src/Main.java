@@ -1,5 +1,9 @@
 import utils.Demo01_Scanner;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
 // 点击装订区域中的 <icon src="AllIcons.Actions.Execute"/> 图标。
@@ -257,20 +261,20 @@ public class Main {
         //        使用成员方法：对象名.成员方法名(参数);
 
         //创建对象格式：类名 对象名 = new 类名();
-        Student objStudent = new Student();
-        //直接输出成员变量值
-        System.out.println("姓名："+objStudent.name); //null
-        System.out.println("年龄："+objStudent.age);
-
-        //给成员变量赋值
-        objStudent.name = "张学霸";
-        objStudent.age = 18;
-        //再次输出成员变量的值
-        System.out.println("姓名："+objStudent.name); //张学霸
-        System.out.println("年龄："+objStudent.age); //18
-        //调用成员方法
-        objStudent.study();
-        objStudent.eat();
+        //Student objStudent = new Student();
+        ////直接输出成员变量值
+        //System.out.println("姓名："+objStudent.name); //null
+        //System.out.println("年龄："+objStudent.age);
+        //
+        ////给成员变量赋值
+        //objStudent.name = "张学霸";
+        //objStudent.age = 18;
+        ////再次输出成员变量的值
+        //System.out.println("姓名："+objStudent.name); //张学霸
+        //System.out.println("年龄："+objStudent.age); //18
+        ////调用成员方法
+        //objStudent.study();
+        //objStudent.eat();
 
 
         // 给继承数据赋值
@@ -303,6 +307,154 @@ public class Main {
         // 有参构造方法使用：可以直接传参新增数据内容
         Demo01_Scanner scanner = new Demo01_Scanner("陈凡", 19);
         System.out.println("姓名：" + scanner.getName() + "年龄：" + scanner.getAge());
+
+        //3、 Scanner类
+        //Scanner sc = new Scanner(System.in);
+        //System.out.println("请录入一条数据");
+        //int sci = sc.nextInt();
+        //System.out.println("sci: " + sci);
+
+        // 3.1、求和
+        //Scanner sc = new Scanner(System.in);
+        //System.out.println("请录入一条数据");
+        //int anInt = sc.nextInt();
+        //System.out.println("请录入第二天数据");
+        //int bInt = sc.nextInt();
+        //int sum = anInt + bInt;
+        //System.out.println("sum: " + sum);
+
+        // 3.2、取最值
+        //Scanner sc = new Scanner(System.in);
+        //System.out.println("请录入一条数据");
+        //int anInt = sc.nextInt();
+        //System.out.println("请录入第二天数据");
+        //int bInt = sc.nextInt();
+        //System.out.println("请录入第三条数据");
+        //int cInt = sc.nextInt();
+        //int temp = (anInt > bInt ? anInt : bInt);
+        //int max1 = (temp > cInt ? temp : cInt);
+        //System.out.println("最大值：" + max1);
+
+        //4、Random类
+        //int n = 50;
+        //// 创建对象
+        //Random r = new Random();
+        //// 获取随机数
+        //// 本来范围是[0,n)，整体+1之后变成了[1,n+1)，也就是[1,n]
+        //int number = r.nextInt(n) + 1;
+        //// 输出随机数
+        //System.out.println("number:" + number);
+
+        // 系统产生一个随机数1‐100之间的。
+        //Random r = new Random();
+        //int number = r.nextInt(100) + 1;
+        ////循环次数不确定所以使用while循环
+        //while(true) {
+        //    // 键盘录入我们要猜的数据
+        //    Scanner sc = new Scanner(System.in);
+        //    System.out.println("请输入你要猜的数字(1‐100)：");
+        //    int guessNumber = sc.nextInt();
+        //    // 比较这两个数据(用if语句)
+        //    if (guessNumber > number) {
+        //        System.out.println("你猜的数据" + guessNumber + "大了");
+        //    } else if (guessNumber < number) {
+        //        System.out.println("你猜的数据" + guessNumber + "小了");
+        //    } else {
+        //        System.out.println("恭喜你,猜中了");
+        //        break;// 如果猜中，不再重试
+        //    }
+        //}
+
+        // 5、ArrayList类
+        //创建学生数组
+        //Student[] students = new Student[3];
+        ////创建学生对象
+        //Student s1 = new Student("曹操",40);
+        //Student s2 = new Student("刘备",35);
+        //Student s3 = new Student("孙权",30);
+        ////把学生对象作为元素赋值给学生数组
+        //students[0] = s1;
+        //students[1] = s2;
+        //students[2] = s3;
+        ////遍历学生数组
+        //for(int x = 0; x < students.length; x++) {
+        //    Student sList = students[x];
+        //    System.out.println(sList.getName()+"‐‐‐"+sList.getAge());
+        //}
+
+
+        //创建学生数组
+        //ArrayList<String> list = new ArrayList<>();
+        ////创建学生对象
+        //String s11 = "曹操";
+        //String s22 = "刘备";
+        //String s33 = "孙权";
+        ////打印学生ArrayList集合
+        //System.out.println(list);
+        ////把学生对象作为元素添加到集合
+        //list.add(s11);
+        //list.add(s22);
+        //list.add(s33);
+        ////打印学生ArrayList集合
+        //System.out.println(list);
+
+        //创建集合对象
+        ArrayList<String> list = new ArrayList<>();
+        //添加元素
+        list.add("hello");
+        list.add("world");
+        list.add("java");
+        //public E get(int index):返回指定索引处的元素
+        System.out.println("get:"+list.get(0));
+        System.out.println("get:"+list.get(1));
+        System.out.println("get:"+list.get(2));
+        //public int size():返回集合中的元素的个数
+        System.out.println("size:"+list.size());
+        //public E remove(int index):删除指定索引处的元素，返回被删除的元素
+        System.out.println("remove:"+list.remove(0));
+        //遍历输出
+        for(int y = 0; y < list.size(); y++){
+            System.out.println(list.get(y));
+        }
+
+        //ArrayList<Integer> list1 = new ArrayList<>();
+        //Random r = new Random();
+        //for (int num = 0; num < 6; num++) {
+        //    int rs = r.nextInt(33) + 1;
+        //    list1.add(rs);
+        //}
+        //for (int y = 0; y < list1.size(); y++) {
+        //    System.out.println(list1.get(y));
+        //}
+
+        //创建集合对象
+        ArrayList<Student> list3 = new ArrayList<Student>();
+        //创建学生对象
+        Student s1 = new Student("赵丽颖",18);
+        Student s2 = new Student("唐嫣",20);
+        Student s3 = new Student("景甜",25);
+        Student s4 = new Student("柳岩",19);
+        //把学生对象作为元素添加到集合中
+        list3.add(s1);
+        list3.add(s2);
+        list3.add(s3);
+        list3.add(s4);
+        //遍历集合
+        for(int zz = 0; zz < list3.size(); zz++) {
+            Student sss = list3.get(zz);
+            System.out.println(sss.getName()+"‐‐‐"+sss.getAge());
+        }
+
+        // 12.接口 定义测试类：
+        Animal animal = new Animal();
+        //animal.eat();
+        //animal.sleep();
+        animal.fly();
+
+
+
+
+
 
     }
 }
