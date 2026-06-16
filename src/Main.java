@@ -1,14 +1,14 @@
 import utils.Demo01_Scanner;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
 // 点击装订区域中的 <icon src="AllIcons.Actions.Execute"/> 图标。
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         //TIP 当文本光标位于高亮显示的文本处时按 <shortcut actionId="ShowIntentionActions"/>
         // 查看 IntelliJ IDEA 建议如何修正。
         System.out.print("Hello and welcome!");
@@ -399,23 +399,23 @@ public class Main {
         //System.out.println(list);
 
         //创建集合对象
-        ArrayList<String> list = new ArrayList<>();
-        //添加元素
-        list.add("hello");
-        list.add("world");
-        list.add("java");
-        //public E get(int index):返回指定索引处的元素
-        System.out.println("get:"+list.get(0));
-        System.out.println("get:"+list.get(1));
-        System.out.println("get:"+list.get(2));
-        //public int size():返回集合中的元素的个数
-        System.out.println("size:"+list.size());
-        //public E remove(int index):删除指定索引处的元素，返回被删除的元素
-        System.out.println("remove:"+list.remove(0));
-        //遍历输出
-        for(int y = 0; y < list.size(); y++){
-            System.out.println(list.get(y));
-        }
+        //ArrayList<String> list = new ArrayList<>();
+        ////添加元素
+        //list.add("hello");
+        //list.add("world");
+        //list.add("java");
+        ////public E get(int index):返回指定索引处的元素
+        //System.out.println("get:"+list.get(0));
+        //System.out.println("get:"+list.get(1));
+        //System.out.println("get:"+list.get(2));
+        ////public int size():返回集合中的元素的个数
+        //System.out.println("size:"+list.size());
+        ////public E remove(int index):删除指定索引处的元素，返回被删除的元素
+        //System.out.println("remove:"+list.remove(0));
+        ////遍历输出
+        //for(int y = 0; y < list.size(); y++){
+        //    System.out.println(list.get(y));
+        //}
 
         //ArrayList<Integer> list1 = new ArrayList<>();
         //Random r = new Random();
@@ -428,33 +428,139 @@ public class Main {
         //}
 
         //创建集合对象
-        ArrayList<Student> list3 = new ArrayList<Student>();
-        //创建学生对象
-        Student s1 = new Student("赵丽颖",18);
-        Student s2 = new Student("唐嫣",20);
-        Student s3 = new Student("景甜",25);
-        Student s4 = new Student("柳岩",19);
+        //ArrayList<Student> list3 = new ArrayList<Student>();
+        ////创建学生对象
+        //Student s1 = new Student("赵丽颖",18);
+        //Student s2 = new Student("唐嫣",20);
+        //Student s3 = new Student("景甜",25);
+        //Student s4 = new Student("柳岩",19);
         //把学生对象作为元素添加到集合中
-        list3.add(s1);
-        list3.add(s2);
-        list3.add(s3);
-        list3.add(s4);
-        //遍历集合
-        for(int zz = 0; zz < list3.size(); zz++) {
-            Student sss = list3.get(zz);
-            System.out.println(sss.getName()+"‐‐‐"+sss.getAge());
-        }
+        //list3.add(s1);
+        //list3.add(s2);
+        //list3.add(s3);
+        //list3.add(s4);
+        ////遍历集合
+        //for(int zz = 0; zz < list3.size(); zz++) {
+        //    Student sss = list3.get(zz);
+        //    System.out.println(sss.getName()+"‐‐‐"+sss.getAge());
+        //}
 
         // 12.接口 定义测试类：
-        Animal animal = new Animal();
+        //Animal animal = new Animal();
         //animal.eat();
         //animal.sleep();
-        animal.fly();
+        //animal.fly();
+
+
+        // Object 类
+        Person person = new Person("贺平升", 17);
+        // 创建两个 Person 对象
+        Person p1 = new Person("张三", 25);
+        Person p2 = new Person("张三", 26);
+        Person p3 = new Person("李四", 30);
+
+        // 调用 equals 方法进行比较（参数是另一个 Person 对象）
+        //boolean result1 = p1.equals(p2);   // true，因为属性相同
+        //boolean result2 = p1.equals(p3);   // false，属性不同
+        //boolean result3 = p1.equals(null); // false（方法内部会处理 null）
+        //boolean result4 = p1.equals("abc");// false（类型不同，方法内会返回 false）
+        //boolean result5 = p1.equals(person);
+
+        // 输出结果
+        //System.out.println("p1.equals(p2) = " + result1);
+        //System.out.println("p1.equals(p3) = " + result2);
+        //System.out.println("p1.equals(null) = " + result3);
+        //System.out.println("p1.equals(\"abc\") = " + result4);
+        //System.out.println("p1.equals(person) = " + result5);
+
+
+        // Date类
+        Date date = new Date();
+        System.out.println(date); // Tue Jun 16 15:39:09 CST 2026
+        System.out.println("toString" + date.toString());// Tue Jun 16 15:39:09 CST 2026
+        System.out.println("toLocaleString:" + date.toLocaleString());//2026年6月16日 15:38:20
+        long time = date.getTime(); // 获取时间戳： 1781595604530
+        System.out.println(time);
+
+        // Date类的空参数构造方法创建日期对象，获取当前系统的日期和时间
+        System.out.println(new Date()); // Tue Jun 16 15:40:50 CST 2026
+        // Date类的带参数构造方法创建日期对象，把当前的毫秒值转成日期对象
+        System.out.println(new Date(0L)); // Thu Jan 01 08:00:00 CST 1970
+
+
+        // 对应的日期格式如：2026-06-16 15:46:27
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(format.format(new Date()));
 
 
 
+        //System.out.println("请输入您的出生日期,格式:yyyy-MM-dd");
+        ////1.使用Scanner类中的方法next，从键盘输入获取出生日期
+        ////下两行也可并作一行写
+        ////String birthdayString = new Scanner(System.in).next();
+        //Scanner sc = new Scanner(System.in);
+        //String birthdayDateString = sc.next();
+        ////2.使用DateFormat类中的方法parse,把字符串的出生日期,解析为Date格式的出生日期
+        //// 创建SimpleDateFormat对象,写日期模式
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //// 调用方法parse,字符串转成日期对象
+        //Date birthdayDate = sdf.parse(birthdayDateString);
+        ////3.把Date格式的出生日期转换为毫秒值
+        //long birthdayDateTime = birthdayDate.getTime();
+        ////4.获取当前的日期,转换为毫秒值
+        //long todayTime = new Date().getTime();
+        ////5.使用当前日期的毫秒值-出生日期的毫秒值
+        //long time2 = todayTime-birthdayDateTime;
+        ////6.把毫秒差值转换为天(s/1000/60/60/24)
+        //System.out.println("已出生"+time2/1000/60/60/24+"天");
+
+
+        //Calendar cal = Calendar.getInstance();
+        //System.out.println(cal.getTime());
+
+        // 创建Calendar对象
+        Calendar cal = Calendar.getInstance();
+        // 获取年
+        int year = cal.get(Calendar.YEAR);
+        // 获取月
+        int month = cal.get(Calendar.MONTH) + 1;//西方的月份0-11 东方:1-12
+        // 获取日
+        int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
+        System.out.print(year + "年" + month + "月" + dayOfMonth + "日");
+
+
+        //String->StringBuilder
+        String str = "hello";
+        System.out.println("str:"+str);
+        StringBuilder bu = new StringBuilder(str);
+        //往StringBuilder中添加数据
+        bu.append("world");
+        System.out.println("bu:"+bu);
+
+        //StringBuilder->String
+        String sl = bu.toString();
+        System.out.println("s:"+sl);
 
 
 
+        //装箱:把基本类型的数据,包装到包装类中(基本类型的数据->包装类)
+        //构造方法
+        Integer in1 = new Integer(1);//方法上有横线,说明方法过时了
+        System.out.println(in1);//1 重写了toString方法
+
+        Integer in2 = new Integer("1");
+        System.out.println(in2);//1
+
+        //静态方法
+        Integer in3 = Integer.valueOf(1);
+        System.out.println(in3);
+
+        //Integer in4 = Integer.valueOf("a");//NumberFormatException 数字格式化异常
+        Integer in4 = Integer.valueOf("1");
+        System.out.println(in4);//1
+
+        //拆箱:在包装类中取出基本类型的数据(包装类->基本类型的数据)
+        int ip = in1.intValue();
+        System.out.println(ip);//1
     }
 }
